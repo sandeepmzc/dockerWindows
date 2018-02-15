@@ -1,0 +1,6 @@
+$d = powershell.exe "docker ps -aq -f name=cont_demo-"
+ForEach ($i in $d)
+{
+powershell.exe "docker stop $i"
+powershell.exe "docker rm $i"
+}
